@@ -1,0 +1,26 @@
+{{page-title 'User'}}
+<div class="container">
+  <div class="columns is-centered">
+
+    {{#each this.usersList as |user|}}
+      {{#unless user.archived}}
+        <div class="column">
+
+          <LinkTo @route="users.user" @model={{user.id}} data-test-user>
+            <div class="user-select is-220px">
+              <img
+                class="is-pulled-left"
+                src={{user.image}}
+                width="60px"
+                alt="profile-image"
+              />
+              <p>{{user.name}}</p>
+            </div>
+          </LinkTo>
+
+        </div>
+      {{/unless}}
+    {{/each}}
+
+  </div>
+</div>
